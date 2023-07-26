@@ -1,0 +1,19 @@
+{% extends 'base.jinja' %}
+
+{% block content %}
+
+<form action="/orders/{{ order.id }}/update" method="post">
+        <select name="user_id">
+            {% for user in users %}
+                <option value="{{ user.id }}">{{ user.username }}</option>
+            {% endfor %}
+        </select>
+        <label for="payment_method">Payment Method</label>
+        <input type="text" name="payment_method" id="payment_method">
+        <label for="date">Date</label>
+        <input type="text" name="date" id="date">
+        <button type="submit">Send Order</button>
+    </form>
+
+    
+{% endblock content %}

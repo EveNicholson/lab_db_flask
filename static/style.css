@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar {
+    display: flex;
+    background-color: bisque;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+.links {
+    list-style-type: none;
+}
+
+h3 {
+    color: brown;
+}
+
+.columns {
+    display: flex;
+    gap: 150px;
+    padding: 150px;
+    justify-content: center;
+}
+
+.add_order {
+    display: flex;
+    flex-direction: column;
+}
+
+.orders {
+    display: flex;
+    flex-direction: column;
+}
+
+.orders_header {
+    margin-bottom: 20px;
+}

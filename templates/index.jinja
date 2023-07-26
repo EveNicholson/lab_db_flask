@@ -1,0 +1,42 @@
+{% extends 'base.jinja' %}
+
+
+{% block content %}
+
+    <section class="columns">
+        <div>
+            <form class="add_order" action="/orders/add" method="post">
+                <select name="user_id">
+                    {% for user in users %}
+                        <option value="{{ user.id }}">{{ user.username }}</option>
+                    {% endfor %}
+                </select>
+                <label for="payment_method">Payment Method</label>
+                <input type="text" name="payment_method" id="payment_method">
+                <label for="date">Date</label>
+                <input type="text" name="date" id="date">
+                <button type="submit">Send Order</button>
+            </form>
+            <form class="add_order" action="/orders/add/user" method="post">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username">
+                <label for="age">Age</label>
+                <input type="number" name="age" id="age">
+                <button type="submit">Add User</button>
+            </form>
+        </div>
+        
+        
+        
+        <div class="orders">
+            <h2 class="orders_header">Click for more</h2>
+            {% for order in orders %}
+                    <a href="/orders/{{ order.id }}">
+                        <p class="orders">{{ order.users.username }} {{ order.date }}</p>
+                    </a>
+            {% endfor %}
+        </div>
+    </section>
+
+
+{% endblock content %}
